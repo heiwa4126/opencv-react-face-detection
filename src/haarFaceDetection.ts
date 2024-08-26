@@ -3,19 +3,18 @@ import { loadDataFile } from "./cvDataFile";
 
 let faceCascade: cv.CascadeClassifier;
 
+const model = "haarcascade_frontalface_default.xml";
+
 export async function loadHaarFaceModels() {
 	console.log("=======start downloading Haar-cascade models=======");
-	return loadDataFile(
-		"haarcascade_frontalface_default.xml",
-		"models/haarcascade_frontalface_default.xml",
-	)
+	return loadDataFile(model, `models/${model}`)
 		.then(
 			() =>
 				new Promise<void>((resolve) => {
 					setTimeout(() => {
 						// load pre-trained classifiers
 						faceCascade = new cv.CascadeClassifier();
-						faceCascade.load("haarcascade_frontalface_default.xml");
+						faceCascade.load(model);
 						resolve();
 					}, 2000);
 				}),
