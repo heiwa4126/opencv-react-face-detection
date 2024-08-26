@@ -18,3 +18,9 @@ URL=https://raw.githubusercontent.com/kipr/opencv/master/data/haarcascades
 mkdir -p public/models
 curl -L "$URL/$MODEL" -o "public/models/$MODEL"
 ```
+
+## TODO
+
+- CSS がデタラメなので直す。
+- モデルの XML を minify する。
+- github-pages にする。
