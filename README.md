@@ -22,6 +22,6 @@ curl -L "$URL/$MODEL" -o "public/models/$MODEL"
 ## TODO
 
 - CSS がデタラメなので直す。
-- モデルの XML を minify する。
-- 目も書く [OpenCV: Face Detection using Haar Cascades](https://docs.opencv.org/4.x/d2/d99/tutorial_js_face_detection.html)
-- github-pages にする。
+- モデルの XML を minify する。いまのところうまくいってない。
+- 目も書く [OpenCV: Face Detection using Haar Cascades](https://docs.opencv.org/4.x/d2/d99/tutorial_js_face_detection.html)。モデルもう 1 個読む必要がある。
+- GitHub Pages にする。

@@ -8,6 +8,7 @@ function App() {
 	const [modelLoaded, setModelLoaded] = useState(false);
 
 	useEffect(() => {
+		// モデルがロードされたらmodelLoadedをtrueにするuseEffect
 		loadHaarFaceModels().then(() => {
 			setModelLoaded(true);
 		});
@@ -18,7 +19,9 @@ function App() {
 	const faceImgRef = useRef<HTMLCanvasElement>(null);
 
 	useEffect(() => {
-		if (!modelLoaded) return;
+		// modelLoadedが変わったら発火
+
+		if (!modelLoaded) return; //これは不要かもしれんが
 
 		const detectFace = async () => {
 			const imageSrc = webcamRef.current?.getScreenshot();
@@ -47,14 +50,16 @@ function App() {
 			});
 		};
 
+		// 以下おおむね 1/60秒ごとにdetectFace()を呼び出すループ
 		let handle: number;
 		const nextTick = () => {
 			handle = requestAnimationFrame(async () => {
 				await detectFace();
-				nextTick();
+				nextTick(); // 自分自身を呼び出す
 			});
 		};
 		nextTick();
+		// 上のループのクリーンアップ関数を返す
 		return () => {
 			cancelAnimationFrame(handle);
 		};
