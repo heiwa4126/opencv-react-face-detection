@@ -31,17 +31,15 @@ function App() {
 					imgRef.current.src = imageSrc;
 					imgRef.current.onload = async () => {
 						try {
-							if (imgRef.current) {
-								const img = cv.imread(imgRef.current as HTMLElement);
-								await detectHaarFace(img);
-								if (faceImgRef.current) {
-									cv.imshow(faceImgRef.current, img);
-								}
+							if (imgRef.current && faceImgRef.current) {
+								let img = cv.imread(imgRef.current as HTMLElement);
+								img = await detectHaarFace(img);
+								cv.imshow(faceImgRef.current, img);
 								img.delete();
-								resolve();
 							}
 						} catch (error) {
 							console.log(error);
+						} finally {
 							resolve();
 						}
 					};

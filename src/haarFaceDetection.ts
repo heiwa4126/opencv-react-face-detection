@@ -38,7 +38,7 @@ export async function detectHaarFace(img: cv.Mat) {
 	const msize = new cv.Size(0, 0);
 
 	// const newImg = img.clone();
-	const newImg = img;
+	const newImg = img; // NOTE: 実はnewImgとimgは同じオブジェクトを指している
 
 	const gray = new cv.Mat();
 	cv.cvtColor(newImg, gray, cv.COLOR_RGBA2GRAY, 0);

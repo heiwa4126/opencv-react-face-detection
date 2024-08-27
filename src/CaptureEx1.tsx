@@ -32,7 +32,7 @@ function App() {
 
 		const canvas = canvasRef.current;
 		const video = videoRef.current;
-		const context = canvas.getContext("2d");
+		const context = canvas.getContext("2d", { willReadFrequently: true });
 
 		// ビデオの現在のフレームをキャンバスに描画(これをソースにする予定)
 		canvas.width = video.videoWidth;
