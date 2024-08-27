@@ -34,7 +34,7 @@ function App() {
 		const video = videoRef.current;
 		const context = canvas.getContext("2d");
 
-		// ビデオの現在のフレームをキャンバスに描画
+		// ビデオの現在のフレームをキャンバスに描画(これをソースにする予定)
 		canvas.width = video.videoWidth;
 		canvas.height = video.videoHeight;
 		context?.drawImage(video, 0, 0, canvas.width, canvas.height);
@@ -42,7 +42,7 @@ function App() {
 
 	return (
 		<div className="App">
-			<h2>Capture Video</h2>
+			<h2>Capture Video (c1)</h2>
 			<video className="webcam" ref={videoRef} autoPlay={true} muted={true} />
 			<canvas className="outputImage" ref={canvasRef} />
 			<br />
