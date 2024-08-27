@@ -4,8 +4,10 @@ OpenCV.js で、リアルタイム顔検出の勉強。
 (実際に使っているのは [TechStark/opencv-js](https://github.com/TechStark/opencv-js))。
 
 コードの元ネタは
-<https://codesandbox.io/p/sandbox/opencv-js-face-detection-i1i3u>
-(via [TechStark/opencv-js: OpenCV JavaScript version for node.js or browser](https://github.com/TechStark/opencv-js))
+
+- <https://codesandbox.io/p/sandbox/opencv-js-face-detection-i1i3u>
+  (via [TechStark/opencv-js: OpenCV JavaScript version for node.js or browser](https://github.com/TechStark/opencv-js)) - v1 はこれを TypeScript にしただけ
+- 元ネタの元ネタ - [OpenCV: Face Detection using Haar Cascades](https://docs.opencv.org/4.x/d2/d99/tutorial_js_face_detection.html)
 
 ## モデル
 
@@ -23,6 +25,7 @@ curl -L "$URL/$MODEL" -o "public/models/$MODEL"
 ## 開発
 
 React で Vite で TypeScript で Bun。
+git
 
 ```sh
 bun i

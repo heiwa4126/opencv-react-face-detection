@@ -9,7 +9,12 @@
 		"preview": "vite preview",
 		"format": "biome format --write .",
 		"lint": "biome lint .",
-		"check": "biome check --write ."
+		"check": "biome check --write .",
+		"tfrm": "cd deploy && node rmtf.mjs",
+		"tfinit": "cd deploy && terraform init -upgrade",
+		"tfapply": "cd deploy && terraform apply -auto-approve",
+		"deploy": "bun run build && cd deploy && terraform apply -auto-approve",
+		"destroy": "cd deploy && terraform destroy -auto-approve"
 	},
 	"dependencies": {
 		"@techstark/opencv-js": "^4.10.0-release.1",
