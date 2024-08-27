@@ -9,7 +9,7 @@ export default defineConfig({
 		rollupOptions: {
 			output: {
 				manualChunks: {
-					r: ["react", "react-dom", "react-router-dom"],
+					r: ["react", "react-dom", "react-router-dom", "react-webcam"],
 					c: ["@techstark/opencv-js"],
 				},
 			},
