@@ -49,18 +49,19 @@ function App() {
 			});
 		};
 
-		// 以下おおむね 1/60秒ごとにdetectFace()を呼び出すループ
+		// 以下300mSごとにdetectFace()を呼び出すループ
+		// requestAnimationFrame()だと1/60秒ごとで、重すぎるので変更してみた
 		let handle: number;
 		const nextTick = () => {
-			handle = requestAnimationFrame(async () => {
-				await detectFace();
-				nextTick(); // 自分自身を呼び出す
-			});
+			handle = window.setTimeout(async () => {
+				await detectFace(); // 顔認識処理
+				nextTick();
+			}, 300);
 		};
 		nextTick();
 		// 上のループのクリーンアップ関数を返す
 		return () => {
-			cancelAnimationFrame(handle);
+			clearTimeout(handle);
 		};
 	}, [modelLoaded]);
 

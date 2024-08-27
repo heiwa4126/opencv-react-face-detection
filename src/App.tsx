@@ -24,7 +24,7 @@ function AppSelector() {
 			<h2>App Selector</h2>
 			<ul>
 				<li>
-					<Link to="/2">v2. 作業中</Link>
+					<Link to="/2">v2. v1は1/60sec間隔で重すぎ。300ms間隔に変えてみた</Link>
 				</li>
 				<li>
 					<Link to="/1">v1. ほぼオリジナル</Link>
