@@ -1,8 +1,9 @@
 # opencv-react-face-detection
 
 OpenCV.js で、リアルタイム顔検出の勉強。
+(実際に使っているのは [TechStark/opencv-js](https://github.com/TechStark/opencv-js))。
 
-元ネタは
+コードの元ネタは
 <https://codesandbox.io/p/sandbox/opencv-js-face-detection-i1i3u>
 (via [TechStark/opencv-js: OpenCV JavaScript version for node.js or browser](https://github.com/TechStark/opencv-js))
 
@@ -10,13 +11,26 @@ OpenCV.js で、リアルタイム顔検出の勉強。
 
 haarcascade_frontalface_default.xml は
 <https://raw.githubusercontent.com/kipr/opencv/master/data/haarcascades/haarcascade_frontalface_default.xml>
-から取得。
+から取得して `public/models/` の下に置いてください。
 
 ```sh
 MODEL=haarcascade_frontalface_default.xml
 URL=https://raw.githubusercontent.com/kipr/opencv/master/data/haarcascades
 mkdir -p public/models
 curl -L "$URL/$MODEL" -o "public/models/$MODEL"
+```
+
+## 開発
+
+React で Vite で TypeScript で Bun。
+
+```sh
+bun i
+bun dev
+bun run build && bun preview
+#
+bun format # biomeがあれば
+bun check # biomeがあれば
 ```
 
 ## TODO
