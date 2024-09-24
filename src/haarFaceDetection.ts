@@ -7,7 +7,9 @@ const model = "haarcascade_frontalface_default.xml";
 
 export async function loadHaarFaceModels() {
 	console.log("=======start downloading Haar-cascade models=======");
-	return loadDataFile(model, `models/${model}`)
+	const url = `https://www.unpkg.com/opencv@6.2.0/data/${model}`;
+	// const url = `models/${model}`;
+	return loadDataFile(model, url)
 		.then(
 			() =>
 				new Promise<void>((resolve) => {

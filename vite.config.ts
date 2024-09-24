@@ -24,15 +24,16 @@ export default defineConfig({
 			],
 		}),
 	],
-	// build: {
-	// 	minify: "esbuild",
-	// 	rollupOptions: {
-	// 		output: {
-	// 			manualChunks: {
-	// 				r: ["react", "react-dom", "react-router-dom", "react-webcam"],
-	// 				c: ["@techstark/opencv-js"],
-	// 			},
-	// 		},
-	// 	},
-	// },
+	build: {
+		minify: "esbuild",
+		rollupOptions: {
+			output: {
+				manualChunks: {
+					r: ["react-dom", "react-webcam"],
+					// r: ["react", "react-dom", "react-router-dom", "react-webcam"],
+					// c: ["@techstark/opencv-js"],
+				},
+			},
+		},
+	},
 });

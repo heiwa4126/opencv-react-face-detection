@@ -11,6 +11,14 @@ OpenCV.js で、リアルタイム顔検出の勉強。
 
 ## モデル
 
+CDN から取るようにした。
+[src/haarFaceDetection.ts](src/haarFaceDetection.ts)の 10 行目あたり参照。
+
+- 参考: <https://www.unpkg.com/browse/opencv@6.2.0/data/>
+- 実体: <https://www.unpkg.com/opencv@6.2.0/data/haarcascade_frontalface_default.xml>
+
+### 古いドキュメント
+
 haarcascade_frontalface_default.xml は
 <https://raw.githubusercontent.com/kipr/opencv/master/data/haarcascades/haarcascade_frontalface_default.xml>
 から取得して `public/models/` の下に置いてください。
