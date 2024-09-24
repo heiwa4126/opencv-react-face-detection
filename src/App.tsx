@@ -10,8 +10,8 @@ function App() {
 	return (
 		<>
 			<Routes>
-				<Route path="/" element={<CaptureEx2 />} />
-				<Route path="/index.html" element={<CaptureEx2 />} /> {/* for AWS S3 HTTPS */}
+				<Route path="/" element={<App2 />} />
+				<Route path="/index.html" element={<App2 />} /> {/* for AWS S3 HTTPS */}
 				<Route path="/2" element={<App2 />} />
 				<Route path="/1" element={<App1 />} />
 				<Route path="/c2" element={<CaptureEx2 />} />
